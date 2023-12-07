@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.108.0">
+  <title>weather app</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/starter-template/">
+
+
+
+
+
+
+  <link href="style.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body
+  style="background-size: 2000px 1500px ; background-image: url(https://images.unsplash.com/photo-1508020963102-c6c723be5764?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHN1bnNldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60)   ">
+
+  <div class="col-lg-8 mx-auto p-4 py-md-5">
+    <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <!-- <svg xmlns="data:image/jpeg;base64,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" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img"> -->
+        <title>Bootstrap</title>
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+          fill="currentColor"></path>
+        </svg>
+        <h1 style="color: white;" class="fs-4"> 🌧️ WEATHER APP</h1>
+      </a>
+    </header>
+
+    <main>
+      <h1 style="color: white;">Going out ? check weather today!</h1>
+      <p style="color:white" class="fs-5 col-md-8">
+        Weather describes short term natural events - such as fog, rain, snow, blizzards, wind and thunder storms,
+        tropical cyclones, etc. - in a specific place and time. WMO coordinates the worldwide efforts that are
+        prerequisite for the production of the accurate and timely weather forecasts.
+      </p>
+
+      <div class="mb-5">
+        <form action="/" method="post">
+          <label style="color: white;" class="fs-4" for="cityinput">CITY:</label>
+          <input type="text" name="cityinput" class="btn btn-light btn-md px-2">
+          <button type="submit" class="btn btn-light">Here You Go!</button>
+        </form>
+      </div>
+
+      <hr class="col-3 col-md-2 mb-5">
+
+
+
+
+  </div>
+  </main>
+  <h5 style="color: white ;" class="pt-6 my-5 text-muted border-top">
+    Created with ❤️ by CHETANYA SINGH BAIS &middot; &copy; 2023
+  </h5>
+  </div>
+
+
+
+
+  <script src="index.js"></script>
+</body>
+
+</html>
